@@ -1,0 +1,10 @@
+/* 适配国产 Pro Micro NRF52840 的电池检测引脚 P0.29 */
+/ {
+    vbatt: vbatt {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+        io-channels = <&adc 5>; /* AIN5 即 P0.29 */
+        output-ohms = <2000000>;
+        full-ohms = <(2000000 + 806000)>;
+    };
+};
