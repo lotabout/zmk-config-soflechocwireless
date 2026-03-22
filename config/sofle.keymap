@@ -10,29 +10,13 @@
 
 / {
     macros {
-        // 1. 负责切层，并在松开时兜底释放 CMD 的宏
-
-        mo_layer_cmd: mo_layer_cmd {
-            compatible = "zmk,behavior-macro";
+        swap: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
             #binding-cells = <0>;
-            wait-ms = <20>; 
-            tap-ms = <20>;
-            bindings
-                = <&macro_press &mo 1>  
-                , <&macro_pause_for_release>
-                , <&macro_release &kp LGUI> 
-                , <&macro_release &mo 1>;   
-        };
-
-        // 2. 负责按下 CMD（不释放）并点按 TAB 的宏
-
-        mac_cmd_tab: mac_cmd_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>; // 预留一点时间让系统识别 Cmd 已按下
-            tap-ms = <20>;
-            bindings = <&macro_press>, <&kp LGUI>, <&macro_tap>, <&kp TAB>;
-   // 点按 Tab
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-layers = <1 2>;
+            ignored-key-positions = <12>;
         };
     };
 
@@ -54,7 +38,7 @@
 &kp TAB    &kp Q   &kp W      &kp E   &kp R   &kp T                              &kp Y      &kp U          &kp I      &kp O     &kp P     &kp BSLH
 &kp LCTRL  &kp A   &kp S      &kp D   &kp F   &kp G                              &kp H      &kp J          &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X      &kp C   &kp V   &kp B      &kp C_MUTE    &kp C_PP  &kp N      &kp M          &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                   &kp GRAVE  &mo 4   &mo 3   &lt 2 ESC  &kp BSPC      &kp RET   &kp SPACE  &mo_layer_cmd  &kp LBKT   &kp RBKT
+                   &kp GRAVE  &mo 4   &mo 3   &lt 2 ESC  &kp BSPC      &kp RET   &kp SPACE  &mo 1          &kp LBKT   &kp RBKT
             >;
 
             sensor-bindings =
@@ -65,7 +49,7 @@
         right_thumb_press {
             bindings = <
 &kp F12       &kp LG(EXCL)  &kp LG(AT)     &kp LG(HASH)  &kp LG(DLLR)  &kp LG(PRCNT)                          &kp F6     &kp F7     &kp F8         &kp F9       &kp F10    &kp F11
-&mac_cmd_tab  &kp LG(Q)     &kp LG(W)      &kp LG(E)     &kp LG(R)     &kp LG(T)                              &kp LG(Y)  &kp LG(U)  &kp LG(I)      &kp LG(O)    &kp LG(P)  &trans
+&swap       &kp LG(Q)     &kp LG(W)      &kp LG(E)     &kp LG(R)     &kp LG(T)                              &kp LG(Y)  &kp LG(U)  &kp LG(I)      &kp LG(O)    &kp LG(P)  &trans
 &trans        &kp LG(A)     &kp LG(S)      &kp LG(D)     &kp LG(F)     &kp LG(G)                              &kp LG(H)  &kp LG(J)  &kp LG(K)      &kp LG(L)    &trans     &trans
 &trans        &kp LG(Z)     &kp LG(X)      &kp LG(C)     &kp LG(V)     &kp LG(V)      &trans          &trans  &kp LG(N)  &kp LG(M)  &kp LG(COMMA)  &kp LG(DOT)  &trans     &trans
                             &kp LG(GRAVE)  &trans        &trans        &kp LA(SPACE)  &kp LG(BSPC)    &trans  &trans     &trans     &trans         &trans
