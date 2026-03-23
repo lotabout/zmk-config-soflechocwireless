@@ -46,6 +46,11 @@
             bindings = <&kp ESCAPE>;
             key-positions = <31 32>;
         };
+
+        cmd-tab-quick-trigger {
+            bindings = <&swap>;
+            key-positions = <56 12>;
+        };
     };
 
     behaviors {
