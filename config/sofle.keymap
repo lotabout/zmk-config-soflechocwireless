@@ -37,6 +37,20 @@
             ignored-layers = <1 2>;
             ignored-key-positions = <12 36 49>;
         };
+
+        tmux_prev_window: tmux_prev_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp P>;
+            label = "TMUX_PREV_WINDOW";
+        };
+
+        tmux_next_window: tmux_next_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp N>;
+            label = "TMUX_NEXT_WINDOW";
+        };
     };
 
     combos {
@@ -85,16 +99,16 @@
                        &kp LG(GRAVE)  &trans        &trans        &kp LA(SPACE)  &kp LG(BSPC)    &trans  &trans     &kp RG(RALT)  &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_UP C_BRI_DN>;
+            sensor-bindings = <&inc_dec_kp &tmux_prev_window &tmux_next_window &inc_dec_kp C_BRI_UP C_BRI_DN>;
         };
 
         left_thumb_press {
             bindings = <
-&kp F12  &kp F1  &kp F2  &kp F3  &kp F4            &kp F5                    &kp F6         &kp F7       &kp F8         &kp F9        &kp F10       &kp F11
-&trans   &trans  &trans  &trans  &trans            &trans                    &kp LG(Y)      &kp LG(U)    &kp LG(I)      &kp LG(O)     &kp LG(P)     &trans
-&trans   &trans  &trans  &trans  &trans            &trans                    &kp LEFT       &kp DOWN     &kp UP         &kp RIGHT     &kp LG(SEMI)  &kp LG(SQT)
-&trans   &trans  &trans  &trans  &trans            &trans  &trans    &trans  &kp LG(N)      &kp LG(M)    &kp LG(COMMA)  &kp LG(DOT)   &kp LG(FSLH)  &trans
-                 &trans  &trans  &kp LG(LEFT_ALT)  &trans  &trans    &trans  &kp LG(SPACE)  &kp LG(RET)  &trans         &kp LG(LBKT)
+&kp F12  &kp F1  &kp F2  &kp F3  &kp F4            &kp F5                           &kp F6         &kp F7       &kp F8         &kp F9        &kp F10       &kp F11
+&trans   &trans  &trans  &trans  &trans            &trans                           &kp LG(Y)      &kp LG(U)    &kp LG(I)      &kp LG(O)     &kp LG(P)     &trans
+&trans   &trans  &trans  &trans  &trans            &trans                           &kp LEFT       &kp DOWN     &kp UP         &kp RIGHT     &kp LG(SEMI)  &kp LG(SQT)
+&trans   &trans  &trans  &trans  &trans            &trans  &trans    &trans         &kp LG(N)      &kp LG(M)    &kp LG(COMMA)  &kp LG(DOT)   &kp LG(FSLH)  &trans
+                 &trans  &trans  &kp LG(LEFT_ALT)  &trans  &trans    &kp LG(ENTER)  &kp LG(SPACE)  &kp LG(RET)  &trans         &kp LG(LBKT)
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_UP C_BRI_DN>;
