@@ -56,17 +56,42 @@
     combos {
         compatible = "zmk,combos";
 
-        jk_esc {
-            bindings = <&kp ESCAPE>;
-            key-positions = <31 32>;
-        };
-
         cmd-tab-quick-trigger {
             bindings = <&swap>;
             key-positions = <56 12>;
             layers = <0>;
             timeout-ms = <100>;
             require-prior-idle-ms = <0>;
+        };
+
+        hmr_lgui {
+            bindings = <&kp LGUI>;
+            key-positions = <28 27>;
+        };
+
+        hmr_lalt {
+            bindings = <&kp LALT>;
+            key-positions = <27 26>;
+        };
+
+        hmr_lgui_lalt {
+            bindings = <&kp LA(LGUI)>;
+            key-positions = <26 27 28>;
+        };
+
+        hmr_rgui {
+            bindings = <&kp RGUI>;
+            key-positions = <31 32>;
+        };
+
+        hmr_ralt {
+            bindings = <&kp RALT>;
+            key-positions = <32 33>;
+        };
+
+        hmr_rgui_ralt {
+            bindings = <&kp RA(RGUI)>;
+            key-positions = <31 32 33>;
         };
     };
 
