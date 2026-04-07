@@ -68,41 +68,49 @@
         hmr_lgui {
             bindings = <&kp LGUI>;
             key-positions = <28 27>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_lalt {
             bindings = <&kp LALT>;
             key-positions = <27 26>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_lgui_lalt {
             bindings = <&kp LA(LGUI)>;
             key-positions = <26 27 28>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_rgui {
             bindings = <&kp RGUI>;
             key-positions = <31 32>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_ralt {
             bindings = <&kp RALT>;
             key-positions = <32 33>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_rgui_ralt {
             bindings = <&kp RA(RGUI)>;
             key-positions = <31 32 33>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_rSAG {
             bindings = <&kp RS(RA(RIGHT_GUI))>;
             key-positions = <31 32 33 34>;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_lSAG {
             bindings = <&kp LA(LS(LGUI))>;
             key-positions = <25 26 27 28>;
+            require-prior-idle-ms = <150>;
         };
     };
 
