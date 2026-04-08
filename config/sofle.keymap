@@ -77,8 +77,8 @@
             require-prior-idle-ms = <150>;
         };
 
-        hmr_lgui_lalt {
-            bindings = <&kp LA(LGUI)>;
+        hmr_lgui_shift {
+            bindings = <&kp LS(LGUI)>;
             key-positions = <26 27 28>;
             require-prior-idle-ms = <150>;
         };
@@ -95,8 +95,8 @@
             require-prior-idle-ms = <150>;
         };
 
-        hmr_rgui_ralt {
-            bindings = <&kp RA(RGUI)>;
+        hmr_rgui_rshift {
+            bindings = <&kp RS(RGUI)>;
             key-positions = <31 32 33>;
             require-prior-idle-ms = <150>;
         };
@@ -149,8 +149,8 @@
         left_thumb_press {
             bindings = <
 &kp F12  &kp F1  &kp F2  &kp F3  &kp F4            &kp F5                    &kp F6         &kp F7    &kp F8  &kp F9     &kp F10  &kp F11
-&trans   &trans  &trans  &trans  &trans            &trans                    &trans         &trans    &trans  &trans     &trans   &trans
-&trans   &trans  &trans  &trans  &trans            &trans                    &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &trans   &trans
+&trans   &trans  &trans  &trans  &trans            &trans                    &trans         &trans    &trans  &trans     &trans   &kp BACKSPACE
+&trans   &trans  &trans  &trans  &trans            &trans                    &kp LEFT       &kp DOWN  &kp UP  &kp RIGHT  &trans   &kp ENTER
 &trans   &trans  &trans  &trans  &trans            &trans  &trans    &trans  &trans         &trans    &trans  &trans     &trans   &trans
                  &trans  &trans  &kp LG(LEFT_ALT)  &trans  &trans    &trans  &kp LG(SPACE)  &trans    &trans  &trans
             >;
