@@ -22,3 +22,5 @@ include:
     shield: sofle_left
     snippet: zmk-usb-logging
     artifact-name: sofle_left-usb-logging
+    # 推迟日志输出 8 秒并加大缓冲，以便抓到开机时的显示初始化日志
+    cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 -DCONFIG_LOG_BUFFER_SIZE=32768
