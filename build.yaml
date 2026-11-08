@@ -17,3 +17,8 @@ include:
     shield: sofle_left
   - board: nice_nano_v2
     shield: sofle_right
+  # 调试用：左半边带 USB 日志，排查 OLED 不亮
+  - board: nice_nano_v2
+    shield: sofle_left
+    snippet: zmk-usb-logging
+    artifact-name: sofle_left-usb-logging
